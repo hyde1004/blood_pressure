@@ -1,0 +1,28 @@
+<html>
+  <head>
+    <script type="text/javascript" src="https://www.google.com/jsapi"></script>
+    <script type="text/javascript">
+      google.load("visualization", "1", {packages:["corechart"]});
+      google.setOnLoadCallback(drawChart);
+      function drawChart() {
+        var data = google.visualization.arrayToDataTable([
+          ['Blood Pressure', 'Max', 'Min'],
+          ['06-07',  126,      75],
+          ['06-08',  120,      80],
+          ['06-08',  120,      80],
+          ['06-08',  120,      80]
+        ]);
+
+        var options = {
+          title: 'Junggu Lee\'s Blood Pressure'
+        };
+
+        var chart = new google.visualization.LineChart(document.getElementById('chart_div'));
+        chart.draw(data, options);
+      }
+    </script>
+  </head>
+  <body>
+    <div id="chart_div" style="width: 900px; height: 500px;"></div>
+  </body>
+</html>
